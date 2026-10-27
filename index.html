@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autocorrect Tool v20 — by Aryan Kumar Shah</title>
+<meta name="description" content="Autocorrect Tool v20 (advanced): fix spelling in a word or a whole sentence, plus double words, capitalisation, spacing, live suggestions, personal dictionary, share/export and a Python version. Project #03 by Aryan Kumar Shah.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<main class="app">
+  <header>
+    <div class="logo">✓Abc</div>
+    <div class="head-text"><h1>Autocorrect Tool <span class="vbadge">v20 ADVANCED</span></h1><p>Fix spelling in seconds — word or full sentence, plus grammar-cleanup.</p></div>
+    <button id="themeBtn" class="theme-btn">🌙</button>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button id="tabWord" class="tab active">Single word</button>
+    <button id="tabSentence" class="tab">Sentence / paragraph</button>
+  </div>
+
+  <section id="wordPanel">
+    <label class="field-label" for="wordInput">Type a word</label>
+    <input id="wordInput" type="text" placeholder="e.g. recieve, tommorow, adress" autocomplete="off" spellcheck="false">
+    <div id="wordResult" class="result">Type a word above — suggestions will appear live.</div>
+    <div id="suggestions" class="chips"></div>
+    <div class="row">
+      <button id="correctWordBtn" class="primary">✓ Correct this word</button>
+      <button id="learnWordBtn">＋ Learn this word</button>
+    </div>
+  </section>
+
+  <section id="sentencePanel" style="display:none">
+    <label class="field-label" for="sentenceInput">Type or paste a sentence</label>
+    <textarea id="sentenceInput" rows="4" placeholder="e.g. I recieve teh adress tommorow, this is definately seperate."></textarea>
+    <div class="row">
+      <button id="correctSentenceBtn" class="primary">✓ Correct whole sentence</button>
+      <button id="copyBtn">📋 Copy corrected</button>
+      <button id="shareBtn">↗ Share</button>
+      <button id="exportBtn">⬇ Export .txt</button>
+      <button id="clearBtn">🧹 Clear</button>
+    </div>
+    <label class="check"><input type="checkbox" id="advancedFix" checked> Advanced fixes: double words, "i" → "I", capital after . ! ?, spacing &amp; double spaces</label>
+    <div id="sentenceResult" class="result">Corrected text will appear here.</div>
+    <div id="changes" class="changes"></div>
+  </section>
+
+  <div class="examples">
+    <span>Try:</span>
+    <button data-example="recieve">recieve</button>
+    <button data-example="I recieve teh adress tommorow">I recieve teh adress tommorow</button>
+    <button data-example="This is definately seperate">This is definately seperate</button>
+    <button data-example="I am writting an adress for my freind">I am writting an adress for my freind</button>
+  </div>
+
+  <p class="stats" id="statsLine">Words checked: 0 • Corrections: 0 • Your words: 0</p>
+
+  <details class="panel">
+    <summary>📖 My words (personal dictionary) — tap to open</summary>
+    <div class="row">
+      <input id="customInput" type="text" placeholder="Add a word, e.g. Aryan" autocomplete="off" spellcheck="false">
+      <button id="addCustomBtn">＋ Add</button>
+    </div>
+    <p id="customList" class="movelog">No personal words yet.</p>
+    <p class="small">Personal words are saved only on this phone, and are never treated as mistakes again.</p>
+  </details>
+
+  <details class="panel">
+    <summary>🕘 Recent corrections — tap to open</summary>
+    <p id="historyList" class="movelog">No corrections yet.</p>
+  </details>
+
+  <p class="foot">Project #03 • v20 ADVANCED • by Aryan Kumar Shah • Works fully offline on your phone after first load — no account, no data leaves your phone. It uses Levenshtein distance (how many letters you must change) plus a common-misspellings list, so it corrects real typos instead of guessing. Advanced fixes also clean double words, "i" → "I", sentence capitals and spacing.</p>
+</main>
+<script src="app.js"></script>
+<script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }</script>
+</body>
+</html>

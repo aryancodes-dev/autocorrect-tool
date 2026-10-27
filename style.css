@@ -1,0 +1,45 @@
+*{box-sizing:border-box}html,body{overflow-x:hidden;width:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#fff;background:#071f1d;min-height:100vh}
+body.light{color:#0f172a;background:#eefaf7}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 300px at 10% 0%,#14b8a655,transparent),radial-gradient(600px 300px at 95% 100%,#8b5cf655,transparent),linear-gradient(180deg,#071f1d,#0b2e2a)}
+body.light .bg{background:radial-gradient(600px 300px at 10% 0%,#99f6e488,transparent),radial-gradient(600px 300px at 95% 100%,#ddd6fe88,transparent),linear-gradient(180deg,#eefaf7,#e0f2fe)}
+.app{max-width:640px;width:100%;margin:0 auto;padding:18px}
+header{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#ffffff1f,#ffffff0a);border:1px solid #ffffff2e;border-radius:24px;padding:14px 16px;box-shadow:0 12px 30px #00000033;flex-wrap:wrap}
+.logo{width:60px;height:60px;display:grid;place-items:center;font-size:20px;font-weight:900;background:linear-gradient(135deg,#14b8a6,#8b5cf6);border-radius:18px;flex-shrink:0;box-shadow:0 6px 18px #14b8a655}
+.head-text{min-width:0;flex:1 1 180px}
+h1{margin:0;font-size:22px;line-height:1.2}
+.vbadge{font-size:11px;background:#f59e0b;color:#111;padding:3px 9px;border-radius:20px;vertical-align:middle;white-space:nowrap}
+header p{margin:5px 0 0;color:#cbd5e1;font-size:13px}body.light header p{color:#475569}
+.theme-btn{background:#ffffff1f;border:1px solid #ffffff33;color:#fff;font-size:20px;border-radius:50%;width:44px;height:44px;cursor:pointer}
+.tabs{display:flex;gap:10px;margin:16px 0}
+.tab{flex:1;padding:12px;border-radius:14px;border:1px solid #ffffff2e;background:#ffffff12;color:#fff;font-weight:700;cursor:pointer;font-size:15px}
+.tab.active{background:linear-gradient(135deg,#14b8a6,#2563eb);border:0}
+body.light .tab{background:#fff;color:#0f172a;border-color:#cbd5e1}
+.field-label{display:block;font-weight:700;margin:10px 0 6px}
+input[type=text],textarea{width:100%;padding:13px 14px;border-radius:14px;border:1px solid #ffffff33;background:#ffffff12;color:#fff;font-size:16px;outline:none}
+body.light input[type=text],body.light textarea{background:#fff;color:#0f172a;border-color:#cbd5e1}
+textarea{resize:vertical;line-height:1.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+button{font-size:15px;padding:11px 14px;border-radius:12px;border:1px solid #ffffff33;background:#ffffff14;color:#fff;cursor:pointer}
+body.light button{background:#fff;color:#0f172a;border-color:#cbd5e1}
+button.primary{background:linear-gradient(135deg,#14b8a6,#2563eb);border:0;font-weight:800;color:#fff;box-shadow:0 6px 16px #2563eb55}
+.result{background:#ffffff12;border:1px solid #ffffff22;border-radius:16px;padding:14px;margin:12px 0;line-height:1.6;overflow-wrap:anywhere;min-height:52px}
+body.light .result{background:#fff;border-color:#e2e8f0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{background:#f59e0b22;border-color:#f59e0b;color:#fbbf24}body.light .chips button{color:#92400e}
+.examples{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0;font-size:13px;color:#cbd5e1}
+.examples button{font-size:13px;padding:8px 10px}body.light .examples{color:#475569}
+.stats{color:#cbd5e1;font-size:13px;text-align:center}body.light .stats{color:#475569}
+.panel{background:#ffffff12;border:1px solid #ffffff22;border-radius:16px;padding:12px;margin:12px 0}
+body.light .panel{background:#fff;border-color:#e2e8f0}
+.panel summary{cursor:pointer;font-weight:700}
+.movelog{font-size:13px;color:#cbd5e1;overflow-wrap:anywhere}body.light .movelog{color:#475569}
+.changes{color:#fbbf24;font-weight:700;overflow-wrap:anywhere}body.light .changes{color:#92400e}
+.small{font-size:12px;color:#94a3b8}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#cbd5e1;line-height:1.5}body.light .check{color:#475569}
+.check input{margin-top:2px}
+.foot{color:#94a3b8;font-size:12px;line-height:1.6;overflow-wrap:anywhere;text-align:center}
+@media (max-width:600px){
+  .app{padding:12px}h1{font-size:20px}.logo{width:50px;height:50px;font-size:18px}
+  button{font-size:14px;padding:10px 12px}input[type=text],textarea{font-size:15px}
+}
